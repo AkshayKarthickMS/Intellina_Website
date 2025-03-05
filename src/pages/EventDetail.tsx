@@ -26,15 +26,9 @@ const EventDetail = () => {
       {/* Left Column */}
       <div className="w-full md:w-1/2 flex flex-col">
         {/* Back Button */}
-        <Link
-          to="/#events"
-          className="flex items-center text-neon-blue hover:underline mb-4"
-        >
           <Link to="/events" className="flex items-center text-neon-blue hover:underline mb-6">
   <ArrowLeft className="h-5 w-5 mr-2" /> Back to Events
 </Link>
-
-        </Link>
 
         {/* Event Image (Aligned Right in Left Column) */}
         <div className="flex justify-end">
