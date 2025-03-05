@@ -30,9 +30,10 @@ const EventDetail = () => {
           to="/#events"
           className="flex items-center text-neon-blue hover:underline mb-4"
         >
-          <Link to="#" onClick={(e) => { e.preventDefault(); window.history.back(); }} className="flex items-center text-neon-blue hover:underline mb-6">
+          <Link to="/events" className="flex items-center text-neon-blue hover:underline mb-6">
   <ArrowLeft className="h-5 w-5 mr-2" /> Back to Events
 </Link>
+
         </Link>
 
         {/* Event Image (Aligned Right in Left Column) */}
