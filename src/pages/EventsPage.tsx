@@ -12,7 +12,6 @@ const EventsPage = () => {
     <div className="bg-dark-bg min-h-screen text-white">
       <Navbar />
 
-      {/* Add padding to prevent navbar overlap */}
       <div className="pt-20">
         {/* Category Tabs */}
         <div className="flex justify-center space-x-4 mb-8">
