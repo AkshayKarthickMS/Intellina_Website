@@ -3,8 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { events } from "../data/events";
 import { offlineGames } from "../data/offlineGames";
 import { onlineGames } from "../data/onlineGames";
-
-
+import { flagshipEvents } from "../data/flagshipEvents";
 import {
   Calendar,
   Trophy,
@@ -12,11 +11,16 @@ import {
   ClipboardList,
   ArrowLeft,
 } from "lucide-react";
+import { useEffect } from "react";
+
 
 const EventDetail = () => {
   const { id } = useParams();
-  const event = events.find((e) => e.id === Number(id)) || offlineGames.find((e) => e.id === Number(id)) || onlineGames.find((e) => e.id === Number(id));
-
+  const event = events.find((e) => e.id === Number(id)) || offlineGames.find((e) => e.id === Number(id)) || onlineGames.find((e) => e.id === Number(id)) || flagshipEvents.find((e) => e.id === Number(id));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+  
   if (!event) {
     return <h1 className="text-center text-white">Event Not Found</h1>;
   }
@@ -26,14 +30,9 @@ const EventDetail = () => {
       {/* Left Column */}
       <div className="w-full md:w-1/2 flex flex-col">
         {/* Back Button */}
-        <Link
-          to="/#events"
-          className="flex items-center text-neon-blue hover:underline mb-4"
-        >
-          <Link to="#" onClick={(e) => { e.preventDefault(); window.history.back(); }} className="flex items-center text-neon-blue hover:underline mb-6">
-  <ArrowLeft className="h-5 w-5 mr-2" /> Back to Events
+          <Link to="/events" className="flex items-center text-white hover:underline mb-6">
+  <ArrowLeft className="h-5 w-5 mr-2" /> Back <span className="text-neon-blue"> to Events</span>
 </Link>
-        </Link>
 
         {/* Event Image (Aligned Right in Left Column) */}
         <div className="flex justify-end">
@@ -63,8 +62,7 @@ const EventDetail = () => {
         {/* Rules Section */}
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-3 flex items-center">
-            <ClipboardList className="h-6 w-6 text-neon-blue mr-2" /> Rules &
-            Guidelines
+            <ClipboardList className="h-6 w-6 text-white mr-2" /> Rules & <span className="text-neon-blue"> Guidelines</span>
           </h2>
           <ul className="list-disc list-inside text-gray-300 space-y-2 pl-2">
             {event.rules.map((rule, index) => (

@@ -62,12 +62,6 @@ const Navbar = () => {
 </Link>
 
               <Link to="/team" className="px-3 py-2 text-sm font-medium text-white hover:text-neon-blue transition duration-300">Team</Link>
-              <a
-                href="#register"
-                className="ml-4 px-4 py-2 rounded-md text-sm font-medium bg-neon-blue text-dark-bg hover:bg-neon-blue/80 transition duration-300"
-              >
-                Register Now
-              </a>
             </div>
           </div>
 
@@ -106,12 +100,9 @@ const Navbar = () => {
   Chronoline
 </Link>
 
-            <a href="#team" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-neon-blue transition duration-300">
-              Team
-            </a>
-            <a href="#register" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium bg-neon-blue text-dark-bg hover:bg-neon-blue/80 transition duration-300 mt-4">
-              Register Now
-            </a>
+            <Link to="/team" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-neon-blue transition duration-300">
+  Team
+</Link>
           </div>
         </motion.div>
       )}
